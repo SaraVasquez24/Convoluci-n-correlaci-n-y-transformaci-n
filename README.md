@@ -145,7 +145,8 @@ La Transformada de Fourier es una herramienta matemática utilizada para convert
 - Espectro de frecuencias de una función.
 (nobbot.com)
 
-#####Carga de la señal
+
+####Carga de la señal
 ```
 x =loadmat('emg_healthym.mat')
 emg = (x['val']-0)/10000
