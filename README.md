@@ -68,6 +68,75 @@ La gráfica resultante es:
 ![image](https://github.com/user-attachments/assets/f786e4e4-98c0-45ce-a755-5435fc692c17)
 
 
+Como podemos observar podemos corroborar los datos impresos con la grafica, viendo y comprobando su veracidad.
+
+
+#### Correlación
+La correlación es una medida estadística que indica el grado de relación entre dos variables. En concreto, la correlación lineal sirve para determinar cuánto de correlacionadas linealmente están dos variables distintas.(probabilidadyestadistica.net)
+En este caso no son variables sino dos señales, una sinusoidal y cosenosoidal.
+Definir las señales s1[nTs] y s2[nTs] en el codigo
+```
+Ts = 1.25e-3  # Período de muestreo 1.25 ms
+n_1 = np.arange(0, 9) #el rango de 0 a 9 de valores n
+señal_1 = np.cos(2 * np.pi * 100 * n_1 * Ts)
+señal_2 = np.sin(2 * np.pi * 100 * n_1 * Ts)
+```
+`Ts` el valor de esta esta dado en el ejercicio.
+`np.cos()` y `np.sin()` nos ayudan a graficar señales del tipo seno y coseno, ademas lo que esta dentro de los parentesis de ambas son especificaciones dadas también en el ejercicio.
+Calculamos la correlación:
+```
+correlacion = np.correlate(señal_1, señal_2, mode='full')
+correlacion = np.round(correlacion, decimals=3) #redondeo no tantos decimales
+```
+El parámetro `mode='full'` en np.correlate() determina cómo se calcula la correlación entre las señales. Modos disponibles en np.correlate() mode='full' (modo completo, predeterminado)
+
+Devuelve la correlación completa entre señal_1 y señal_2.
+`np.correlate()` nos sirve para hallar la correlación entre las dos señales. 
+El parámetro `mode='full'` en `np.correlate()` determina cómo se calcula la correlación entre las señales. Hay varios modos disponibles en `np.correlate()` siendo esta el modo completo, predeterminado.
+`np.round()` permite hacer un redondeo de 3 decimales, esto con el fin de que sea mas limpio en la impresion de estos datos.
+```
+Correlacion_mostrar = "Correlación entre s1 y s2: " + str(correlacion.tolist())
+print(Correlacion_mostrar)
+```
+Esto en el terminal se muestra asi: `Correlación entre s1 y s2: [-0.0, -0.707, -1.5, -1.414, -0.0, 2.121, 3.5, 2.828, 0.0, -2.828, -3.5, -2.121, 0.0, 1.414, 1.5, 0.707, 0.0]`, corroborando que son 3 decimales de aproximacion y viendo el valor (señal) resultante de la correlacion.
+
+Procedemos a graficar, debemos tener en cuenta que se genera una figura y dentro de esta, se hacen tres graficas mostrando la señal_1, señal_2 y la respectiva correlación de estas dos señales. Debemos recordar que el rango `n_1` va de 0 a 9 valores n. exceptuando la correlacion, lo explicaremos mas adelante.
+
+```
+# los plt.subplot() se usa para crear múltiples subgráficos dentro del mismo "grafico".
+plt.figure(figsize=(12, 5))
+plt.subplot(3, 1, 1)  #3=numero de fila, 1=numero total de columnas, 1=es el primero de forma descendente 
+plt.stem(n_1, señal_1, linefmt='b', markerfmt='bo', basefmt='k')
+plt.xlabel("n")
+plt.ylabel("s1[nTs]")
+plt.title("Señal s1[nTs] = cos(2π100nTs)")
+plt.grid(alpha=0.3)
+```
+```
+plt.subplot(3, 1, 2)
+plt.stem(n_1, señal_2, linefmt='r', markerfmt='ro', basefmt='k')
+plt.xlabel("n")
+plt.ylabel("s2[nTs]")
+plt.title("Señal s2[nTs] = sin(2π100nTs)")
+plt.grid(alpha=0.3)
+```
+```
+plt.subplot(3, 1, 3)
+plt.stem(range(-len(n_1) + 1, len(n_1)), correlacion, linefmt='g', markerfmt='go', basefmt='k')
+plt.xlabel("n")
+plt.ylabel("Correlación")
+plt.title("Correlación entre s1 y s2")
+plt.grid(alpha=0.3)
+
+plt.tight_layout() #evita que se amontonen los titulos y ejes
+plt.show()
+```
+En la gráfica de la correlación, notamos que no tomamos la variable `n_1` en el eje x como en las anteriores, ya que esta representa la correlación entre las dos señales. Como se mencionó anteriormente, la correlación indica la relación entre dos señales, lo que da como resultado una longitud determinada por **2N-1**. Dado que **N=9**, la longitud resultante es **17**.  
+
+Para centrar el valor cero en el eje x, utilizamos `range(-len(n_1) - 1, len(n_1))`, lo que nos permite calcular el valor mínimo de x. Como **N=9**, el cálculo `-len(n_1) - 1` nos da **x = -8**, permitiendo que la secuencia pase por 0 y continúe hasta **8** en el lado positivo, asegurando así una representación simétrica.
+
+
+
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
 
 
