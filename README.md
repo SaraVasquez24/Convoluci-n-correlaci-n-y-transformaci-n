@@ -72,6 +72,7 @@ La gráfica resultante es:
 
 
 ##Bibliografía
+
 [1]	P. y. Estadística, “Correlación”, Probabilidad y Estadística, 25-feb-2022. [En línea]. Disponible en: https://www.probabilidadyestadistica.net/correlacion/. [Consultado: 12-feb-2025].
 [2]	“PhysioBank ATM”, Physionet.org. [En línea]. Disponible en: https://archive.physionet.org/cgi-bin/atm/ATM. [Consultado: 12-feb-2025].
 [3]	P. S. Chischilly, “¿Qué Es Y Para Qué Sirve La Convolución?”, Electronica.guru. [En línea]. Disponible en: https://electronica.guru/app01/7599/que-es-y-para-que-sirve-la-convolucion. [Consultado: 12-feb-2025].
