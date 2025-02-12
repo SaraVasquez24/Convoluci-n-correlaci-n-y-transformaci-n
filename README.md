@@ -175,6 +175,78 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
 
 
+Después de esto, vamos a usar la Transformada Rápida de Fourier para analizar la señal en el dominio de la frecuencia.
+
+```
+N = len(emg)  # Número total de muestras
+freqs = fftfreq(N, ts)[:N // 2]  # Cálculo de las frecuencias hasta la mitad del espectro
+fft_values = np.abs(fft(emg))[:N // 2]  # Magnitud de la transformada de Fourier
+```
+`N = len(emg)` N almacena el número total de muestras en la señal emg.
+`fftfreq(N, ts)`: Calcula los valores de frecuencia correspondientes a la transformada de Fourier. `N` es el número de muestras. `ts` es el período de muestreo (tiempo entre muestras, es decir, ts = 1 / Fs, donde Fs es la frecuencia de muestreo).
+`[:N // 2]`: Se queda solo con la mitad del espectro, eliminando las frecuencias negativas.
+Como la FFT de una señal real es simétrica, solo necesitamos la parte positiva.
+`fft_values = np.abs(fft(emg))[:N // 2]`
+`fft(emg)`: Calcula la Transformada Rápida de Fourier (FFT) de la señal emg.
+`np.abs()`: Obtiene la magnitud de la FFT, descartando la información de fase.
+despues de tener la respectiva transformada rapida de Foulier, procedemos a graficar, siendo el eje x la frecuencia `freqs` y el eje y la magnitud `fft_values`
+```
+plt.figure(figsize=(15, 5))
+plt.plot(freqs, fft_values, color='green', linewidth=1.2, label="Señal EMG")
+plt.xlabel("Frecuencia (Hz)", fontsize=12, fontweight='bold')  
+plt.ylabel("Magnitud", fontsize=12, fontweight='bold') 
+plt.title("espectro de magnitud de la señal emg", fontsize=14, fontweight='bold', color='darkred') 
+plt.grid(True, linestyle="--", alpha=0.6)  
+plt.legend(loc="upper right")  
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/7431308d-9caf-486f-ade4-f19e59280535)
+
+
+
+Continuando, se calcula la densidad espectral de potencia (PSD) de forma manual.
+```
+psd = (fft_values ** 2) / N  # PSD estimada
+```
+
+`(fft_values ** 2)` Eleva al cuadrado los valores de la FFT, lo que equivale a obtener la potencia espectral de cada frecuencia. como `fft_values = np.abs(fft(emg))[:N // 2]`, este paso da la energía en cada frecuencia.
+ajustar valores de la potencia dividiéndola por el número total de muestras `N`.
+
+y se grafica.
+
+![image](https://github.com/user-attachments/assets/edac189e-d751-495d-8b61-18815cc25321)
+
+
+
+Por último procedemos a realizar los calculos estadisticos descriptivos en el dominio de la frecuencia y un histograma de frecuencias para visualizar la distribución espectral.
+```
+# Histograma de frecuencias para visualizar la distribución espectral
+plt.hist(freqs.flatten(), bins=30, color="yellow", ec="black")
+plt.xlabel("Frecuencia (Hz)", fontsize=12,fontweight='bold')
+plt.ylabel("Densidad", fontsize=12,fontweight='bold')
+plt.title("Histograma de Frecuencias", fontsize=14, fontweight='bold', color='black')
+plt.show()
+```
+
+![image](https://github.com/user-attachments/assets/d1d98281-19c3-4d40-8f1b-6dadc91094c2)
+
+
+```
+# Cálculo de estadísticas en el dominio de la frecuencia
+media = np.mean(freqs)
+desviacion_estandar = np.std(freqs)
+coeficiente_variacion = desviacion_estandar / media
+
+print(f"La media de las frecuencias es: {media}")
+print(f"La desviación estándar de las frecuencias es: {desviacion_estandar}")
+print(f"El coeficiente de variación es: {coeficiente_variacion}")
+```
+imprimiendo:
+`La media de las frecuencias es: 999.95`
+`La desviación estándar de las frecuencias es: 577.3502684679379`
+`El coeficiente de variación es: 0.5773791374248091`
+
 
 ### Descripción de la señal respecto a su clasificación
 
