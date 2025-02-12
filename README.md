@@ -138,6 +138,38 @@ Para centrar el valor cero en el eje x, utilizamos `range(-len(n_1) - 1, len(n_1
 ![image](https://github.com/user-attachments/assets/256db264-19ac-4038-9345-cf5702a675f8)
 
 
+#### Señal EMG, transformada de Foulier 
+La Transformada de Fourier es una herramienta matemática utilizada para convertir señales del dominio del tiempo o del espacio al dominio de la frecuencia, y viceversa. Este concepto abarca varios aspectos simultáneamente, permitiendo analizar la composición frecuencial de una señal y facilitando su procesamiento en diferentes aplicaciones.
+- Operación de transformación de una función.
+- Función resultado de la operación.
+- Espectro de frecuencias de una función.
+(nobbot.com)
+
+#####Carga de la señal
+```
+x =loadmat('emg_healthym.mat')
+emg = (x['val']-0)/10000
+emg = np.transpose(emg)
+```
+`loadmat('emg_healthym.mat')` Es un archivo de tipo `.mat` que es donde se encuentra cargada la señal a utilizar. `(x['val']-0)/10000` Se usa para extraer los datos de la señal, y esta se divide en 200 para convertirla en (mV). `np.transpose(ecg)` Ajusta la disposición de los datos, para que estos se alineen adecuadamente.
+```
+fs = 4000
+ts = 1/fs
+t = np.linspace(0, np.size(emg), np.size(emg))*ts
+```
+fs=4000 Hace referencia a la frecuencia a la que la señal es muestreada. `ts=1/fs` Calcula el tiempo que hay entre una muestra y otra `np.linspace(0,np.size(ecg),np.size(emg))*ts` Esta linea genera un vector de tiempo en segundos.
+a continuacion procedemos a graficar (los diseños de las graficas son iguales unas a otras por tal motivo, no realizaremos nuevamente dicha explicacion)
+```
+plt.figure(figsize=(15, 5))  # Tamaño más grande para mejor visualización
+plt.plot(t, emg, color='purple', linewidth=1.2, label="Señal EMG")
+plt.xlabel("Tiempo (s)", fontsize=12, fontweight='bold')  
+plt.ylabel("Amplitud (mV)", fontsize=12, fontweight='bold') 
+plt.title("Electromiografia (EMG)", fontsize=14, fontweight='bold', color='darkred')  # Título en negrita y color
+plt.grid(True, linestyle="--", alpha=0.6)  # Agregar cuadrícula con línea punteada
+plt.legend(loc="upper right")  
+plt.show()
+```
+
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
 
 
