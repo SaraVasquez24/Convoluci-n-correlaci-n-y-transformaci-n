@@ -65,7 +65,8 @@ Dentro de `plt.stem()`, se configuran los siguientes parámetros para mejorar la
  
 La gráfica resultante es: 
 
-![image](https://github.com/user-attachments/assets/f52c71f3-2faf-40d8-91c4-32c8074c151e)
+![image](https://github.com/user-attachments/assets/f786e4e4-98c0-45ce-a755-5435fc692c17)
+
 
 
 
