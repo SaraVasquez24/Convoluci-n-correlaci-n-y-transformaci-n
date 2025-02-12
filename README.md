@@ -146,7 +146,8 @@ La Transformada de Fourier es una herramienta matemática utilizada para convert
 (nobbot.com)
 
 
-####Carga de la señal
+#### Carga de la señal
+
 ```
 x =loadmat('emg_healthym.mat')
 emg = (x['val']-0)/10000
@@ -174,7 +175,24 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
 
 
-##Bibliografía
+
+### Descripción de la señal respecto a su clasificación
+
+Según su naturaleza: Es una señal biomédica que se obtiene a partir de la actividad eléctrica de los músculos, generada por la activación de las fibras musculares a través de impulsos nerviosos.
+
+Según su dominio: Se presenta en el dominio del tiempo, donde se puede observar su variación a lo largo del tiempo, y en el dominio de la frecuencia, utilizando su Transformada de Fourier, que permite analizar su contenido espectral.
+
+Según su periodicidad: Es una señal no periódica debido a la variabilidad de los patrones musculares, que dependen del tipo de contracción y del esfuerzo realizado.
+
+Según su determinismo: Es una señal aleatoria, ya que su comportamiento cambia con el tiempo y está influenciado por diversos factores fisiológicos y externos.
+
+Según su continuidad: Aunque es una señal analógica en su origen, ha sido digitalizada mediante muestreo a una frecuencia de 4000 Hz para facilitar su análisis computacional.
+
+Según su contenido espectral: La señal EMG abarca una amplia gama de frecuencias, con componentes significativos entre 10 Hz y 500 Hz, lo que es característico de este tipo de señales musculares. Su espectro de magnitud y densidad espectral de potencia muestran cómo se distribuye su energía en el dominio de la frecuencia.
+
+
+
+## Bibliografía
 
 [1]	P. y. Estadística, “Correlación”, Probabilidad y Estadística, 25-feb-2022. [En línea]. Disponible en: https://www.probabilidadyestadistica.net/correlacion/. [Consultado: 12-feb-2025].
 [2]	“PhysioBank ATM”, Physionet.org. [En línea]. Disponible en: https://archive.physionet.org/cgi-bin/atm/ATM. [Consultado: 12-feb-2025].
