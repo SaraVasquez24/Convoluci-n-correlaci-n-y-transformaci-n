@@ -1,5 +1,3 @@
-# Convoluci-n-correlaci-n-y-transformaci-n
-
 # Convolución, correlación y transformación
 Este repositorio tiene como objetivo explicar, utilizar y reconocer, la convolución como una operación entre señal y sistema, la correlación como una operación entre señales y la transformada de Fourier. Todo esto visualizado en python por medio del compilador spyder.
 
@@ -7,10 +5,10 @@ Este repositorio tiene como objetivo explicar, utilizar y reconocer, la convoluc
 1.  Tendremos un sistema h[n], dada por cada dígito del código estudiantil y una señal de entrada x[n] dada por cada dígito del documento de identificación de cada uno. Para asi mismo  hacer el proceso de convolucion para  hallar la señal de salida y[n], imprimiendo esta señal y observando su respectiva grafica.
 2. Se tienen dos señales definidas en un intervalo "n". Se calculará la correlación cruzada entre ellas y se visualizará en una gráfica para analizar su relación.
 3. -Se obtiene una señal electromiográfica (EMG) desde la base de datos PhysioNet.
-	-Se calculan estadísticas descriptivas como la media, desviación estándar y frecuencia media (fm).
-	-Se describe la señal en términos de su clasificación y características fisiológicas.
-	-Se aplica la transformada de Fourier para obtener su representación en el dominio de la frecuencia.
-	-Finalmente, se grafican tanto la transformada de Fourier (espectro de magnitud) como la densidad espectral de potencia para analizar la distribución de energía en las diferentes frecuencias..
+-Se calculan estadísticas descriptivas como la media, desviación estándar y frecuencia media (fm).
+-Se describe la señal en términos de su clasificación y características fisiológicas.
+-Se aplica la transformada de Fourier para obtener su representación en el dominio de la frecuencia.
+-Finalmente, se grafican tanto la transformada de Fourier (espectro de magnitud) como la densidad espectral de potencia para analizar la distribución de energía en las diferentes frecuencias..
 
 ### Uso de librerias 
 
