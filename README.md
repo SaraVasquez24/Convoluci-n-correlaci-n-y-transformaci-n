@@ -1,7 +1,7 @@
 # Convolución, correlación y transformación
 Este repositorio tiene como objetivo explicar, utilizar y reconocer, la convolución como una operación entre señal y sistema, la correlación como una operación entre señales y la transformada de Fourier. Todo esto visualizado en python por medio del compilador spyder.
 
-## Partes del codigo
+## Partes del código
 1.  Tendremos un sistema h[n], dada por cada dígito del código estudiantil y una señal de entrada x[n] dada por cada dígito del documento de identificación de cada uno. Para asi mismo  hacer el proceso de convolucion para  hallar la señal de salida y[n], imprimiendo esta señal y observando su respectiva grafica.
 2. Se tienen dos señales definidas en un intervalo "n". Se calculará la correlación cruzada entre ellas y se visualizará en una gráfica para analizar su relación.
 3. -Se obtiene una señal electromiográfica (EMG) desde la base de datos PhysioNet.
@@ -63,5 +63,36 @@ Dentro de `plt.stem()`, se configuran los siguientes parámetros para mejorar la
 `markerfmt='ro'`: Representa los puntos de la secuencia como marcadores rojos.
 `basefmt='k-'`: Establece la línea base en color negro, proporcionando un punto de referencia claro en el gráfico.
  
-la grafica resultante es: 
+La gráfica resultante es: 
+
+![image](https://github.com/user-attachments/assets/f52c71f3-2faf-40d8-91c4-32c8074c151e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
