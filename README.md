@@ -97,3 +97,13 @@ La gráfica resultante es:
 
 
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
+
+##Bibliografía
+
+[1]	P. y. Estadística, “Correlación”, Probabilidad y Estadística, 25-feb-2022. [En línea]. Disponible en: https://www.probabilidadyestadistica.net/correlacion/. [Consultado: 12-feb-2025].
+[2]	“PhysioBank ATM”, Physionet.org. [En línea]. Disponible en: https://archive.physionet.org/cgi-bin/atm/ATM. [Consultado: 12-feb-2025].
+[3]	P. S. Chischilly, “¿Qué Es Y Para Qué Sirve La Convolución?”, Electronica.guru. [En línea]. Disponible en: https://electronica.guru/app01/7599/que-es-y-para-que-sirve-la-convolucion. [Consultado: 12-feb-2025].
+[4]	R. Python, “Fourier Transforms With scipy.fft: Python Signal Processing”, Realpython.com, 02-nov-2020. [En línea]. Disponible en: https://realpython.com/python-scipy-fft/. [Consultado: 12-feb-2025].
+[5]	V. T. las E. De programacionpython, “APLICANDO LA ‘TRANSFORMADA DE FOURIER’ EN PYTHON, CON ‘numpy’”, El Programador Chapuzas, 06-dic-2023. [En línea]. Disponible en: https://programacionpython80889555.wordpress.com/2023/12/06/aplicando-la-transformada-de-fourier-en-python-con-numpy/. [Consultado: 12-feb-2025].
+
+
