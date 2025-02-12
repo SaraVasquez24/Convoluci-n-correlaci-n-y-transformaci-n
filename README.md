@@ -135,6 +135,7 @@ En la gráfica de la correlación, notamos que no tomamos la variable `n_1` en e
 
 Para centrar el valor cero en el eje x, utilizamos `range(-len(n_1) - 1, len(n_1))`, lo que nos permite calcular el valor mínimo de x. Como **N=9**, el cálculo `-len(n_1) - 1` nos da **x = -8**, permitiendo que la secuencia pase por 0 y continúe hasta **8** en el lado positivo, asegurando así una representación simétrica.
 
+![image](https://github.com/user-attachments/assets/256db264-19ac-4038-9345-cf5702a675f8)
 
 
 ![image](https://github.com/user-attachments/assets/5680fe49-3633-4d5b-a919-7f979f539ee4)
